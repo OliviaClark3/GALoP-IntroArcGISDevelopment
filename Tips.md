@@ -9,3 +9,5 @@
  - When using a variable name for the first time, you must declare that you are creating the variable with the word `let` or `const` in front of the variable name
 
  - Your browser will read your code top to bottom, if it finds a variable or function before it is declared, it's going to get stuck
+
+ - You can comment code by select a line (or lines) and click CTRL+/ . Commenting can be very useful when you want to try new code, without losing your old code
