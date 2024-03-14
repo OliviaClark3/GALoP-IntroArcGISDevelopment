@@ -1,4 +1,4 @@
-# Exercise 6 - Your on your own
+# Exercise 6 - You're on your own
 
 Congrats on making it through all the structured exercises. You must be getting the hang of this by now.
 
