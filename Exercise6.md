@@ -22,4 +22,8 @@ These next couple of tasks might require you to do some googling outside of the 
 Let's make these buttons a bit prettier with some Calcite Components
 Calcite Components are Esri's versions of you standard HTML components (plus more) to give your web application a cleaner finish, and the look and feel of other ArcGIS products
 
- - 
+ - Install the Calcite Components package and add it to your code (https://developers.arcgis.com/calcite-design-system/get-started/)
+
+ - On the site above, find the components documentation, locate the button component
+
+ - Using the button documentation, replace your current HTML button components with the Calcite Button
