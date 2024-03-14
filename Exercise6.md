@@ -6,6 +6,7 @@ Here some tasks for you to try without me providing the help guides, you can fin
 
  - Add the Expand Widget to each of your over widgets so they don't have to all block the screen
 
- - Add a header to your website above the map with the title of your application
+ - Add a header to your website above the map with the title of your application using a div. Make it so that there is no scrollbar on your page by changing the styles
 
- - Take a look through the JavaScript SDK documentation to see what other features are available and try adding some yourself!
+ - Take a look through the JavaScript SDK documentation to find another widget you want to add to your map, and add it in
+
