@@ -37,6 +37,6 @@
                 <div id="viewDiv">My Website</div>
             </body>
         </html>
-    ```
+        ```
 
 5. Save your work. Open your index.html file in a web browser, and you should see the words "My Website" on the screen
