@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>My First Website!</title>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.29/"></script>
+
+    <script>
+      require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer",
+      ], function (esriConfig, Map, MapView, FeatureLayer) {
+        esriConfig.apiKey =
+          "AAPKa07a324e95e9498bb1de9d702ae6a65fkX6C2FmCKj71uGcHeQne7esbI9_JXyE3836Tyf3JWmiBkvKK518ht8Xg8BwG8Vmq";
+
+        const map = new Map({
+          basemap: "arcgis/topographic", // basemap styles service
+        });
+
+        const view = new MapView({
+          map: map,
+          center: [173.244, -41.299], // Longitude, latitude
+          zoom: 13, // Zoom level
+          container: "viewDiv", // Div element
+        });
+
+        const nelsonHutsLayer = new FeatureLayer({
+          url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Huts/FeatureServer",
+        });
+
+        map.add(nelsonHutsLayer);
+
+        const nelsonTracksLayer = new FeatureLayer({
+          url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Walking_Tracks_Dec17/FeatureServer",
+        });
+
+        map.add(nelsonTracksLayer, 0);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
