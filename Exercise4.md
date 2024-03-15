@@ -1,4 +1,4 @@
-# Step 4 - Adding Popups
+# Exercise 4 - Adding Popups
 
 You would have found that clicking on your newly added features does... nothing. 
 
