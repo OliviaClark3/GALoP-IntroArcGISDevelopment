@@ -1,4 +1,4 @@
-# Step 2 - Display a map
+# Exercise 2 - Display a map
 
 To use the JavaScript SDK, we'll need an API key to confirm that we have the licence to use it
 
