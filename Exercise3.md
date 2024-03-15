@@ -1,4 +1,4 @@
-# Step 3 - Add a feature layer
+# Exercise 3 - Add a feature layer
 
 We now have a map! Try interacting with it. You'll find all interaction controls are the same as with ArcGIS Online.
 
