@@ -1,4 +1,4 @@
-# Step 1 - Initial Setup
+# Exercise 1 - Initial Setup
 
 1.  Install Visual Studio Code (https://code.visualstudio.com/). We will be using this to write our code
 2.  Create a folder on your computer to store the code.
