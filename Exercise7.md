@@ -2,7 +2,7 @@
 
 Check out this Participatory Planning showcase project and try out the live demo (https://developers.arcgis.com/javascript/latest/showcase/participatory-planning/)
 
-Start a new project and create your own version of this in a 3D scene
+Start a new project and create your own city planning application
 
 It's up to you what you implement and how you do it, but here are some suggestions
 - Use the editor and/or the sketch widget
