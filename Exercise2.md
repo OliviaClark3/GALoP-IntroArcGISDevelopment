@@ -1,23 +1,38 @@
 # Exercise 2 - Display a map
 
-To use the JavaScript SDK, we'll need an API key to confirm that we have the licence to use it
+To use the JavaScript SDK, we'll need an API key to confirm that we have the licence to use it.
 
-1. Follow this link (https://developers.arcgis.com/dashboard/) to go to your developer dashboard
+1. Go to the content tab in your GALoP ArcGIS Online
+   
+3. Go to "New item" in the top left corner, then Developer Credentials
+   
+5. Select "API key credential" and click Next
+   
+7. Click Next on the Settings page
+   
+9. On the Privleges page, enable everything then click Next
 
-    a. If prompted with a question about how you use ArcGIS, you can answer the question or just Return to Dashboard
+If you are creating an application for your work or organisation, you may wish to read up on these privleges and only enable certain ones, but for the purpose of our exercises today, we will just keep everything enabled.
 
-If you already have an API key, skip to step 4
+6. Click Next on the Restrict item access page
+   
+8. Add a title in the item details and click Next
+   
+10. Click the checkbox and click Next on the Summary page
+    
+12. Click next to generate your API key now
 
-2. In the top right, click API Keys, then click New API Key
-3. Give it any title you like, then click Create API Key. Keep this tab open in your browser as you will need to use your API key shortly
+You will then be presented with your API key. Be sure to make a copy of this and store it somewhere safe. Once you close this window you will no longer have access to the API key and will have to make a new one if you lose it.
+
+----------------------------------------------------------------
 
 We will now add a map to our website
 
-4. Remove the My Website text from the viewDiv in the body of the HTML
+1. Remove the My Website text from the viewDiv in the body of the HTML
 
-5. Follow the instructions at (https://developers.arcgis.com/javascript/latest/tutorials/display-a-map/) to display a map.
+2. Follow the instructions at (https://developers.arcgis.com/javascript/latest/tutorials/display-a-map/) to display a map on your website.
 When asked for your API Key, copy and paste in the one you just generated
 
 NOTE: We already have some of the code shown in this tutorial. Start off at the heading Add Modules
 
-6. Save your work, and reload your website
+3. Save your work, and reload your website
