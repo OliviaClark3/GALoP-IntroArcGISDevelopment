@@ -1,7 +1,7 @@
 # Exercise 1 - Initial Setup
 
 1.  Install Visual Studio Code (https://code.visualstudio.com/). We will be using this to write our code
-2.  Create a folder on your computer to store the code.
+2.  Create a folder on your computer to store your code.
 3.  Once VS Code is installed, open VS Code, go File > Open Folder, and open the folder we just created
 4.  Create a new file called index.html
 
