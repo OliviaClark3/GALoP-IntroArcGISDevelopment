@@ -15,7 +15,7 @@ These next couple of tasks might require you to do some googling outside of the 
  - Add a button (HTML element) to your header with the text "Add Huts". Give you button an id so you can reference it
 
  - Add some JavaScript so that only when you click on the button, the Huts layer gets added to the map.
-      - First get your button to just output "click" in the console. You can find the console on the web browser by clicking CTRL+SHIFT+I. Then add a console.log to output there when the button is clicked
+      - First get your button to just output "click" in the console. You can find the console on the web browser by clicking CTRL+SHIFT+I. Then add a console.log("") to output there when the button is clicked
   
  - Once that button is working, add another to remove the huts layer from the map
 
