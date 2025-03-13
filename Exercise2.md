@@ -33,6 +33,6 @@ We will now add a map to our website
 2. Follow the instructions at (https://developers.arcgis.com/javascript/latest/tutorials/display-a-map/) to display a map on your website.
 When asked for your API Key, copy and paste in the one you just generated
 
-NOTE: We already have some of the code shown in this tutorial. Start off at the heading Add Modules
+NOTE: We already have some of the code shown in this tutorial. Start off at the heading Add References
 
 3. Save your work, and reload your website
