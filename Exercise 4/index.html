@@ -10,8 +10,7 @@
 
     <style>
       html,
-      body,
-      #viewDiv {
+      body {
         padding: 0;
         margin: 0;
         height: 100%;
@@ -19,34 +18,75 @@
       }
     </style>
 
+    <!-- The esriConfig variable must be defined before adding the other esri libraries -->
+    <script>
+      var esriConfig = {
+        apiKey:
+          "YOUR_API_KEY",
+      };
+    </script>
+
+    <!-- Load Calcite components from CDN -->
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"
+    ></script>
+
+    <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
     <link
       rel="stylesheet"
-      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+      href="https://js.arcgis.com/4.32/esri/themes/light/main.css"
     />
-    <script src="https://js.arcgis.com/4.29/"></script>
+    <script src="https://js.arcgis.com/4.32/"></script>
 
-    <script>
-      require([
-        "esri/config",
-        "esri/Map",
-        "esri/views/MapView",
-        "esri/layers/FeatureLayer",
-      ], function (esriConfig, Map, MapView, FeatureLayer) {
-        esriConfig.apiKey =
-          "AAPKa07a324e95e9498bb1de9d702ae6a65fkX6C2FmCKj71uGcHeQne7esbI9_JXyE3836Tyf3JWmiBkvKK518ht8Xg8BwG8Vmq";
+    <!-- Load Map components from CDN-->
+    <script
+      type="module"
+      src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"
+    ></script>
+  </head>
+  <body>
+    <arcgis-map
+      basemap="arcgis/topographic"
+      center="173.244, -41.299"
+      zoom="13"
+    >
+      <arcgis-zoom position="top-left"></arcgis-zoom>
+    </arcgis-map>
+  </body>
 
-        const map = new Map({
-          basemap: "arcgis/topographic", // basemap styles service
+  <script>
+    require(["esri/layers/FeatureLayer"], (FeatureLayer) => {
+      const arcgisMap = document.querySelector("arcgis-map");
+      arcgisMap.addEventListener("arcgisViewReadyChange", () => {
+        const nelsonTracksPopup = {
+          title: "Nelson Tracks",
+          content: [
+            {
+              type: "media",
+              mediaInfos: [
+                {
+                  type: "bar-chart",
+                  caption: "",
+                  value: {
+                    fields: ["Shape__Length"],
+                    tooltipField: "Lengthtext",
+                    colors: [[218, 112, 214, 255]],
+                  },
+                },
+              ],
+            },
+          ],
+        };
+
+        const nelsonTracks = new FeatureLayer({
+          url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Walking_Tracks_Dec17/FeatureServer",
+          outFields: ["*"],
+          popupTemplate: nelsonTracksPopup,
         });
+        arcgisMap.map.add(nelsonTracks);
 
-        const view = new MapView({
-          map: map,
-          center: [173.244, -41.299], // Longitude, latitude
-          zoom: 13, // Zoom level
-          container: "viewDiv", // Div element
-        });
-
-        const hutsPopupContent = (feature) => {
+        const hutsPopupContent = async (feature) => {
           const defaultString =
             "This is a <b>{Category}</b> located in <b>{Area}</b> with a capacity of <b>{Capacity}</b>.<br/>";
           let facilitiesString;
@@ -67,45 +107,13 @@
           content: hutsPopupContent,
         };
 
-        const nelsonHutsLayer = new FeatureLayer({
+        const nelsonHuts = new FeatureLayer({
           url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Huts/FeatureServer",
-          outFields: ["*"], // get all fields
+          outFields: ["*"],
           popupTemplate: nelsonHutsPopup,
         });
-
-        map.add(nelsonHutsLayer);
-
-        const nelsonTracksPopup = {
-          title: "{Name}",
-          content: [
-            {
-              type: "media",
-              mediaInfos: [
-                {
-                  type: "bar-chart",
-                  caption: "",
-                  value: {
-                    fields: ["Shape__Length"],
-                    tooltipField: "Lengthtext",
-                    colors: [[218, 112, 214, 255]],
-                  },
-                },
-              ],
-            },
-          ],
-        };
-
-        const nelsonTracksLayer = new FeatureLayer({
-          url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Walking_Tracks_Dec17/FeatureServer",
-          outFields: ["*"], // get all fields
-          popupTemplate: nelsonTracksPopup,
-        });
-
-        map.add(nelsonTracksLayer, 0);
+        arcgisMap.map.add(nelsonHuts);
       });
-    </script>
-  </head>
-  <body>
-    <div id="viewDiv"></div>
-  </body>
+    });
+  </script>
 </html>
