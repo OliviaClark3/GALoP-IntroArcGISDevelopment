@@ -10,8 +10,7 @@
 
     <style>
       html,
-      body,
-      #viewDiv {
+      body {
         padding: 0;
         margin: 0;
         height: 100%;
@@ -19,48 +18,58 @@
       }
     </style>
 
+    <!-- The esriConfig variable must be defined before adding the other esri libraries -->
+    <script>
+      var esriConfig = {
+        apiKey: "AAPTxy8BH1VEsoebNVZXo8HurDiar2m5vObaiSzzVdPBIuJB1Ec9CWzLqQZxRuCmLv-m3jalQVCc6Shl7vkh4RFVzwPIsEUOwzGK3g9aP-ed1Zj3_L1-vnhpkeHebiwCnGQ5UfbVyyqHJu0oLy6CQPEQJp_QoYTA3uu4Az7T_ke1_gs3pTFnSnaxKCVUnBDPLHCIpDp6DelkaLn6jYY8QpzIj20iIWdtrEsxcAoFeSmE5vM.AT1_4B1Gnds1",
+      };
+    </script>
+
+    <!-- Load Calcite components from CDN -->
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"
+    ></script>
+
+    <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
     <link
       rel="stylesheet"
-      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+      href="https://js.arcgis.com/4.32/esri/themes/light/main.css"
     />
-    <script src="https://js.arcgis.com/4.29/"></script>
+    <script src="https://js.arcgis.com/4.32/"></script>
 
-    <script>
-      require([
-        "esri/config",
-        "esri/Map",
-        "esri/views/MapView",
-        "esri/layers/FeatureLayer",
-      ], function (esriConfig, Map, MapView, FeatureLayer) {
-        esriConfig.apiKey =
-          "AAPKa07a324e95e9498bb1de9d702ae6a65fkX6C2FmCKj71uGcHeQne7esbI9_JXyE3836Tyf3JWmiBkvKK518ht8Xg8BwG8Vmq";
-
-        const map = new Map({
-          basemap: "arcgis/topographic", // basemap styles service
-        });
-
-        const view = new MapView({
-          map: map,
-          center: [173.244, -41.299], // Longitude, latitude
-          zoom: 13, // Zoom level
-          container: "viewDiv", // Div element
-        });
-
-        const nelsonHutsLayer = new FeatureLayer({
-          url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Huts/FeatureServer",
-        });
-
-        map.add(nelsonHutsLayer);
-
-        const nelsonTracksLayer = new FeatureLayer({
-          url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Walking_Tracks_Dec17/FeatureServer",
-        });
-
-        map.add(nelsonTracksLayer, 0);
-      });
-    </script>
+    <!-- Load Map components from CDN-->
+    <script
+      type="module"
+      src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"
+    ></script>
   </head>
   <body>
-    <div id="viewDiv"></div>
+    <arcgis-map
+      basemap="arcgis/topographic"
+      center="173.244, -41.299"
+      zoom="13"
+    >
+      <arcgis-zoom position="top-left"></arcgis-zoom>
+    </arcgis-map>
   </body>
+
+  <script>
+  require(["esri/layers/FeatureLayer"], (FeatureLayer) => {
+    const arcgisMap = document.querySelector("arcgis-map");
+    arcgisMap.addEventListener("arcgisViewReadyChange", () => {
+
+      const nelsonTracks = new FeatureLayer({
+        url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Walking_Tracks_Dec17/FeatureServer"
+      });
+      arcgisMap.map.add(nelsonTracks)
+
+      const nelsonHuts = new FeatureLayer({
+        url: "https://services7.arcgis.com/Nmg3r3okD4I9SIfk/arcgis/rest/services/Huts/FeatureServer"
+      })
+      arcgisMap.map.add(nelsonHuts)
+
+    });
+  });
+</script>
 </html>
