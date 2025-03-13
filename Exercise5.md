@@ -6,40 +6,21 @@ By this point, our index.html file is getting a bit crowded. Let's split the HTM
 
 2. Select all the content between the style tags in index.html and cut and paste it into your styles.css file. Remove the style tags from index.html
 
-3. Select all the content between the script tags in index.html and cut and paste it into your index.js. Remove the empty script tags from index.html. Leave the script tags that link to the JavaScript SDK that we added first
+3. Select all the content between the script tags below the body in index.html and cut and paste it into your index.js. Leave the script tags that link to the JavaScript SDK that we added first
 
-4. Add a link to your stylesheet (styles.css) by adding the following code into the head of your HTML
+4. Add a link to your stylesheet (styles.css) by adding the following code into the head of your HTML where the styles were previously
 
 ```
 <link rel="stylesheet" href="styles.css" />
 ```
 
-5. Add a link to your JavaScript file (index.js) by adding the following code after the other script tag
+5. Add a link to your JavaScript file (index.js) by adding the following code where your previous javascript was
 
 ```
 <script src="index.js"></script>
 ```
 
-6. Run your application to check it's all still working. At this point the head of our HTML should look something like this
-
-```
-<head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <title>My First Website!</title>
-
-    <link
-      rel="stylesheet"
-      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://js.arcgis.com/4.29/"></script>
-    <script src="index.js"></script>
-  </head>
-```
+6. Run your application to check it's all still working
 
 Now that we've cleaned up our code a bit, we're ready to add some widgets
 
