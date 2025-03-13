@@ -26,13 +26,9 @@ Now that we've cleaned up our code a bit, we're ready to add some widgets
 
 7. Following the steps in this tutorial (https://developers.arcgis.com/javascript/latest/tutorials/query-a-feature-layer-spatial/) add the sketch widget to the application. You will only need to follow the instructions under the Create a Sketch Widget heading
 
-8. Now that we know how to add widgets, try having a go at adding the Legend widget to our application. Here is the documentation page to help you out (https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html)
+8. Now that we know how to add widgets, try having a go at adding the Legend widget to our application. Here is the documentation page to help you out (https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/)
 
-9. One last widget that might be useful for our map is the Elevation Profile Widget. To use this we'll first need to add an elevation layer to our map. Find the NZ Elevation layer at (https://eaglelabs.maps.arcgis.com/home/item.html?id=2ce4fe7d77024e719f8a04d2155b3fd2) 
-
-10. Using this documentation to help you out (https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-ElevationLayer.html), add the NZ Elevation layer to the map
-
-11. Add the Elevation Profile Widget to your application using this documentation (https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ElevationProfile.html)
+9. Find another widget that interests you to add to the map (https://developers.arcgis.com/javascript/latest/references/map-components/)
 
 Bonus task: Go back and see what you can customise about these three widgets we've just added!
 
