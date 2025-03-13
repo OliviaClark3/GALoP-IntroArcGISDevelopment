@@ -28,7 +28,7 @@ You will then be presented with your API key. Be sure to make a copy of this and
 
 We will now add a map to our website
 
-1. Remove the My Website text from the viewDiv in the body of the HTML
+1. Remove the My Website div from the body of your HTML
 
 2. Follow the instructions at (https://developers.arcgis.com/javascript/latest/tutorials/display-a-map/) to display a map on your website.
 When asked for your API Key, copy and paste in the one you just generated
